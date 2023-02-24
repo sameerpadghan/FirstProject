@@ -35,6 +35,9 @@ void AStoneActor::Tick(float DeltaTime)
 	//In which Axis the actor should go
 	FVector my_delta_location = FVector(0.0f, 0.0f, 1.0f);
 	this->AddActorWorldOffset(my_delta_location);
+	//Making cRotation around the up axis(around Z axis)
+	FRotator myDeltaRotation = FRotator(0.0f, 10.0f, 0.0f);
+	this->AddActorWorldRotation(myDeltaRotation);
 	//Printing on the Screen
 	UKismetSystemLibrary::PrintString(this, TEXT("Printing on screen from C++"));
 }
