@@ -15,8 +15,10 @@ class FIRSTPROJECT_API AStoneActor : public AActor
 public:
 	// Sets default values for this actor's properties
 	AStoneActor();
-	class UStaticMeshComponent* staticmeshcomponent;
-	 
+	//Making it Editable from C++ or from Blueprints
+	UPROPERTY(EditAnywhere)
+		class UStaticMeshComponent* staticmeshcomponent;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
