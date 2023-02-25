@@ -34,7 +34,9 @@ void AStoneActor::BeginPlay()
 	//)
 	//Here Outer means the Actor who is owning the object
 	//creating a UMyObject class object
-	auto u_my_obj = NewObject<UMyObject>(this);
+	UMyObject* u_my_obj = NewObject<UMyObject>(this);
+	//Can also use this auto keyword
+	//auto u_my_obj2 = NewObject<UMyObject>(this);
 	//using it method my_function
 	u_my_obj->my_function(10.0f);
 	//Printing on the Screen
