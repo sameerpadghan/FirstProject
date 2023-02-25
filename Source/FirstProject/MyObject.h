@@ -17,9 +17,10 @@ class FIRSTPROJECT_API UMyObject : public UObject
 {
 	GENERATED_BODY()
 public:
+	UMyObject();
 	//Making the varible visible in the Blueprint
 	UPROPERTY(BlueprintReadWrite)
-		float my_float = 0;
+		float my_float;
 	//Making the function visibile in Blueprint
 	UFUNCTION(BlueprintCallable)
 		float my_function(float value);

@@ -3,6 +3,7 @@
 #include "StoneActor.h"
 #include "Components/StaticMeshComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "MyObject.h"
 // Sets default values
 AStoneActor::AStoneActor()
 {
@@ -26,6 +27,18 @@ AStoneActor::AStoneActor()
 void AStoneActor::BeginPlay()
 {
 	Super::BeginPlay();
+	//template<class T>
+	//T* NewObject
+	//(
+	//	UObject * Outer
+	//)
+	//Here Outer means the Actor who is owning the object
+	//creating a UMyObject class object
+	auto u_my_obj = NewObject<UMyObject>(this);
+	//using it method my_function
+	u_my_obj->my_function(10.0f);
+	//Printing on the Screen
+	UKismetSystemLibrary::PrintString(this, TEXT("Printing on screen using C++ from StoneActor"));
 }
 
 // Called every frame
@@ -39,5 +52,5 @@ void AStoneActor::Tick(float DeltaTime)
 	FRotator myDeltaRotation = FRotator(0.0f, 10.0f, 0.0f);
 	this->AddActorWorldRotation(myDeltaRotation);
 	//Printing on the Screen
-	UKismetSystemLibrary::PrintString(this, TEXT("Printing on screen from C++"));
+	//UKismetSystemLibrary::PrintString(this, TEXT("Printing on screen from C++"));
 }
