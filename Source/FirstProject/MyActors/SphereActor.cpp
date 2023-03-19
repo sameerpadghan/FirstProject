@@ -19,6 +19,7 @@ ASphereActor::ASphereActor()
 	{
 		staticmeshcomponent->SetStaticMesh(actor_visual_asset.Object);
 	}
+	staticmeshcomponent->SetSimulatePhysics(true);
 }
 
 // Called when the game starts or when spawned
